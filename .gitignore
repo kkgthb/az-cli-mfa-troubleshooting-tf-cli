@@ -2,10 +2,13 @@
 
 # Some common things to ignore
 .vscode
-node_modules
+*.pem
+dist
+test-results
+
+# Ignore Terraform
 .terraform*
 terraform.tfstate
 terraform.tfstate.backup
-*.pem
-
-test-results
+# Except include Terraform dependency version number lockfiles, because we are good supply chain security citizens and we know to do that know.
+!.terraform.lock.hcl
